@@ -12,5 +12,16 @@ Plugins.link("menu.dll");
 Plugins.link("KAGParser.dll");
 @endif
 
+// Load MenuItem stub
+if (typeof(global.MenuItem) !== "Object")
+{
+	Scripts.execStorage("MenuItem_stub.tjs");
+}
+// Load font and set it as default
+if (typeof(global.Font) === "Object" && typeof(global.Font.addFont) === "Object")
+{
+	System.setArgument("-deffont", global.Font.addFont("font.otf")[0]);
+}
+
 // このスクリプトは一番最初に実行されるスクリプトです
 Scripts.execStorage("system/Initialize.tjs"); // system/Initialize.tjs を実行
