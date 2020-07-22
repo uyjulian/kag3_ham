@@ -21,15 +21,7 @@ Scripts.execStorage("_preferences/system.tjs");
 	リッチファイルは別パスにして、アクセスは必ず関数経由にすること
 */
 
-// If we are running in the root path, don't try to go to parent directory
-if (Storages.getFullPath(".") === "file://./.")
-{
-	global.asset_path_relative_to_project_path = Storages.getFullPath(".") + "/";
-}
-else
-{
-	global.asset_path_relative_to_project_path = Storages.getFullPath("..") + "/";
-}
+global.asset_path_relative_to_project_path = Storages.getFullPath(".") + "/";
 
 // 追加の準備
 var MBFilePath = %[];
