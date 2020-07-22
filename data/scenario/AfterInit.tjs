@@ -21,6 +21,16 @@ Scripts.execStorage("_preferences/system.tjs");
 	リッチファイルは別パスにして、アクセスは必ず関数経由にすること
 */
 
+// If we are running in the root path, don't try to go to parent directory
+if (Storages.getFullPath(".") === "file://./.")
+{
+	global.asset_path_relative_to_project_path = Storages.getFullPath(".") + "/";
+}
+else
+{
+	global.asset_path_relative_to_project_path = Storages.getFullPath("..") + "/";
+}
+
 // 追加の準備
 var MBFilePath = %[];
 
@@ -28,7 +38,7 @@ var MBFilePath = %[];
 
 function addPathToMBPath(name, path)
 {
-	path = "%s%s".sprintf(System.exePath, path);
+	path = "%s%s".sprintf(global.asset_path_relative_to_project_path, path);
 	MBFilePath[name] = "%s/".sprintf(path);
 }
 
@@ -38,7 +48,7 @@ if (!MBSystemPref.debugMode) {
 	{
 		// 追加関数（すぐ後で破棄）
 		
-		path = "%s%s.xp3".sprintf(System.exePath, path);
+		path = "%s%s.xp3".sprintf(global.asset_path_relative_to_project_path, path);
 		dm("`%s'を検索中...".sprintf(path));
 		if (Storages.isExistentStorage(path)) {
 			MBFilePath[name] = "%s>".sprintf(path);
