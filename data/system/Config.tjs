@@ -14,7 +14,7 @@
 // ◆ タイトル
 // ウィンドウのキャプション(タイトル)および
 // タスクバーに表示されるものです。
-;System.title = "吉里吉里";
+;System.title = "鱧天";
 
 
 // ◆ シナリオ解析モード
@@ -125,7 +125,7 @@ function KAGWindow_config()
 //       ( 先頭の // は含まず )
 // と入力して Enter キーを押しても取得することができます。
 // ( 例 : "371a6289-a084-ee18-2885-66314a0aa19d" )
-;saveDataID = "00000000-0000-0000-0000-000000000000";
+;saveDataID = "009c0d07-c786-47ca-8e90-9968b148dcc7";
 
 
 // ◆ 保存モード
@@ -135,7 +135,7 @@ function KAGWindow_config()
 // 簡単には読めないようなデータになるので、栞の圧縮は暗号化を
 // 兼ねています。
 // "" を指定すると栞の暗号化や圧縮はされません。
-;saveDataMode = "";
+;saveDataMode = "z";
 
 
 // ◆ 栞にマクロの情報を保存するかどうか
@@ -171,6 +171,10 @@ function KAGWindow_config()
 ;autoModeLineWaits.medium = 300; // 「普通」
 ;autoModeLineWaits.slower = 360; // 「やや遅い」
 ;autoModeLineWaits.slow = 500; // 「遅い」
+
+// ムービー用
+;autoModePageWaits.medium = 2000; // 「普通」
+;autoModeLineWaits.medium = 500; // 「普通」
 
 
 // ◆ マウスカーソル
@@ -220,7 +224,7 @@ function KAGWindow_config()
 // 1 を指定すると 保存可能なラベルを通過するごとに自動的に通過記録を行いま
 //   す。
 // 2 を指定すると選択肢 ( s タグで停止 ) ごとに通過記録を行います。
-;recordHistoryOfStore = 0;
+;recordHistoryOfStore = 2;
 
 
 // ◆ 通過記録の最大数
@@ -240,7 +244,7 @@ function KAGWindow_config()
 // 利用可能な効果音バッファの最大値を指定します。つまり、ここで指定した数の
 // 分だけ効果音を同時に再生できます。効果音を使用しない場合は 0 を指定して
 // かまいません。
-;numSEBuffers = 3;
+;numSEBuffers = 8;
 
 
 // ◆ ムービーオブジェクトの数
@@ -286,14 +290,14 @@ function KAGWindow_config()
 // ◆ 初期状態のメッセージレイヤの数
 // 前景レイヤと違って、0 を指定することはできません。これも必要な数だけ確保
 // するようにすべきです。laycount タグでシナリオ内でも変更できます。
-;numMessageLayers = 2;
+;numMessageLayers = 3;
 
 
 // ◆ 初期状態でメッセージレイヤを表示するかどうか
 // true を指定するとメッセージレイヤ0が初期状態で表示状態になりますが、
 // false を指定すると初期状態ではすべてのメッセージレイヤは初期状態で非表示
 // になります。
-;initialMessageLayerVisible = true;
+;initialMessageLayerVisible = false;
 
 
 // ◆ 利用可能な栞の数
@@ -314,7 +318,7 @@ function KAGWindow_config()
 // ◆ フォント選択で固定ピッチフォントのみを表示するか
 // true を指定すると、フォント選択ウィンドウで固定ピッチフォントのみを表示
 // するようになります。
-;showFixedPitchOnlyInFontSelector = false;
+;showFixedPitchOnlyInFontSelector = true;
 
 
 // ◆ 「ヘルプ > 目次」を選択したときに実行するファイル
@@ -326,8 +330,8 @@ function KAGWindow_config()
 // ◆ 「ヘルプ > このソフトについて」を選択したときにでる
 // ウィンドウの表示領域のサイズ
 // このメニューを選択すると about.ks がそのウィンドウ内で実行されます。
-;aboutWidth = 320; // 幅
-;aboutHeight = 200; // 高さ
+;aboutWidth = 400; // 幅
+;aboutHeight = 280; // 高さ
 
 
 // ◆ ウィンドウや動作の追加の設定
@@ -529,7 +533,7 @@ function MessageLayer_config()
 
 // ◆ 行間
 // 行間を pixel 単位で指定します。
-;defaultLineSpacing = 6; // defstyle タグの linespacing 属性に相当
+;defaultLineSpacing = 8; // defstyle タグの linespacing 属性に相当
 
 // ◆ 字間
 // 字間を pixel 単位で指定します。
@@ -547,17 +551,17 @@ function MessageLayer_config()
 // (あるいはシステム変数ファイルを消してください)
 // カンマで区切って複数のフォントを指定することができます。その場合は、最初
 // の方に書いたフォントが存在すれば、優先されます。
-;userFace = "メイリオ"; // deffont タグの face 属性に相当
+;userFace = "ＭＳ Ｐ明朝"; // deffont タグの face 属性に相当
 
 
 // ◆ 文字の色
 // デフォルトの文字の色を 0xRRGGBB 形式で指定します。
-;defaultChColor = 0xffffff;  // deffont タグの color 属性に相当
+;defaultChColor = 0x000000;  // deffont タグの color 属性に相当
 
 
 // ◆ 文字をボールドにするか
 // する場合は true, しない場合は false を指定します。
-;defaultBold = true; // deffont タグの bold 属性に相当
+;defaultBold = false; // deffont タグの bold 属性に相当
 
 
 // ◆ ルビサイズ
@@ -586,7 +590,7 @@ function MessageLayer_config()
 
 // ◆ 影を描画するか
 // する場合は true, しない場合は false を指定します。
-;defaultShadow = true;  // deffont タグの shadow 属性に相当
+;defaultShadow = false;  // deffont タグの shadow 属性に相当
 
 
 // ◆ 縁取りをするか
@@ -637,7 +641,7 @@ function MessageLayer_config()
 // ◆ 縦書きモード
 // メッセージレイヤを標準で縦書きモードにする場合は false ではなく true を
 // 指定してください。
-;vertical = false;
+;vertical = false;  // position タグの vertical 属性に相当
 
 
 // ◆ マウスでドラッグ可能か
@@ -702,7 +706,7 @@ function HistoryLayer_config()
 
 
 // ◆ フォントを太字にするか
-;fontBold = true;
+;fontBold = false;
 
 
 // ◆ フォントのサイズ ( pixel単位)

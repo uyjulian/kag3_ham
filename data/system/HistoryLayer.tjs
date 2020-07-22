@@ -60,7 +60,7 @@ class HistoryLayer extends Layer
 	var marginR = 12;
 	var marginT = 12;
 	var marginB = 12;
-	var fontName = "ＭＳ Ｐ明朝";
+	var fontName = "umeplus.tft";
 	var fontBold = false;
 	var fontHeight = 24;
 	var lineHeight = 26;

@@ -370,6 +370,19 @@ class BaseLayer extends GraphicLayer
 
 	function restore(dic)
 	{
+		/* Hack by hF ;) */
+		try {
+			var fname = Storages.extractStorageName(dic.loadParams.storage);
+			var reg   = new RegExp("^[0-9]");
+			if (reg.match(fname).count) {
+				reg   = new RegExp("[^0-9-]", "g");
+				fname = reg.replace(fname, "");
+			}
+			dic.loadParams.storage = sysfunc.getPathBGImage(fname);
+		}
+		catch(e){}
+		/* The end of hacking */
+		
 		// restore オーバーライド
 		if(isPrimary) dic.visible = true; else dic.visible = false;
 		dic.absolute = 0;
