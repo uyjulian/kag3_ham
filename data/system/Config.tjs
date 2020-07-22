@@ -41,10 +41,6 @@
 
 //[start-global-additionals]
 
-// ◆ Ham拡張の使用
-// Ham Extention for KAG3を使用しない場合はfalseにしてください。
-;global.useHamExtention = true;
-
 //[end-global-additionals]
 
 

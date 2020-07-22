@@ -273,13 +273,6 @@ if(Storages.isExistentStorage(System.exePath + "AfterInit2.tjs"))
 }
 
 /*
-	Ham拡張の組み込み
-*/
-if (global.useHamExtention) {
-	Scripts.execStorage("system/Ham/Ham.tjs");
-}
-
-/*
 	first.ks の実行
 */
 
